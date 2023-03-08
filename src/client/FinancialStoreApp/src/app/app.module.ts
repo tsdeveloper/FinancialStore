@@ -13,6 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { AuthGuardService } from './guards/auth.guard';
+import { AuthService } from './services/utils/auth.service';
 
 
 @NgModule({
@@ -23,14 +24,10 @@ import { AuthGuardService } from './guards/auth.guard';
     ComponentsModule,
     NgbModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  declarations: [
-    AppComponent,
-    AdminLayoutComponent,
-    AuthLayoutComponent
-  ],
-  providers: [AuthGuardService],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent],
+  providers: [AuthGuardService, AuthService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

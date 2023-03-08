@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { User } from "src/app/models/user/user.model";
+import { CONSTANST } from "src/app/utils/constanst";
 
 @Injectable()
 export class AuthService {
@@ -20,6 +21,7 @@ export class AuthService {
   constructor(public http: HttpClient) {}
 
   hasToken(): boolean {
+    console.log(`localstorage: ${!!localStorage.getItem('token')}`);
     return !!localStorage.getItem("token");
   }
 
