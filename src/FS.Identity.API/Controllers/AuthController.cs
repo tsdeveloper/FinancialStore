@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FS.Identity.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
         private readonly ILogger<AuthController> _logger;
@@ -15,7 +15,7 @@ namespace FS.Identity.API.Controllers
             _logger = logger;
         }
 
-        [HttpPost]
+        [HttpPut]
         public async Task<ActionResult> PutAuth(UserRegisterDTO userRegister)
         {
             var userRegisterValidator = new UserRegisterDTOValidator();
