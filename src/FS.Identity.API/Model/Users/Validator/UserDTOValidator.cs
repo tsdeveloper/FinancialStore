@@ -21,6 +21,6 @@ namespace FS.Identity.API.Model.Users.Validator
         private bool ComparePasswordIsEqual(UserRegisterDTO obj, string value)
         {
             return value.Equals(obj.Password);
-        }t
+        }
     }
 }
